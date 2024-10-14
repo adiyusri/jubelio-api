@@ -1,0 +1,308 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "26e31c0d-72cd-468e-8c37-c2ea66dc4b94",
+      "name": "Products and Transactions API",
+      "description": "API documentation for managing products and adjustment transactions.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-10-13T08:25:34.000Z",
+      "createdAt": "2024-10-13T08:25:34.000Z",
+      "lastUpdatedBy": "38975402",
+      "uid": "38975402-26e31c0d-72cd-468e-8c37-c2ea66dc4b94"
+    },
+    "item": [
+      {
+        "name": "Products",
+        "item": [
+          {
+            "name": "Get All Products",
+            "id": "ca5aa68f-d056-4d52-bf00-2a2574b777de",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/products?limit=10&page=20",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "products"
+                ],
+                "query": [
+                  {
+                    "key": "limit",
+                    "value": "10"
+                  },
+                  {
+                    "key": "page",
+                    "value": "20"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-ca5aa68f-d056-4d52-bf00-2a2574b777de"
+          },
+          {
+            "name": "Get Product Detail",
+            "id": "98ff6d37-55be-469a-b0e6-1be62c49c6d2",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/products/42",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "products",
+                  "42"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-98ff6d37-55be-469a-b0e6-1be62c49c6d2"
+          },
+          {
+            "name": "Create Product",
+            "id": "2c18336a-b5bb-48b5-ba9d-4e3dd4764cb1",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Product F\",\n    \"sku\": \"SKU285\",\n    \"image\": \"https://example.com/image.jpg\",\n    \"price\": 150,\n    \"stock\":60,\n    \"description\": \"\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/products",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "products"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-2c18336a-b5bb-48b5-ba9d-4e3dd4764cb1"
+          },
+          {
+            "name": "Update Product",
+            "id": "a60ac5b0-b462-4722-a761-a50a88faf152",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Updated Product Adi\",\n    \"price\": \"99.99\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/products/34",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "products",
+                  "34"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-a60ac5b0-b462-4722-a761-a50a88faf152"
+          },
+          {
+            "name": "Delete Product",
+            "id": "7e952c6d-11d9-4420-a927-a1ee813bfce8",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/products/34",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "products",
+                  "34"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-7e952c6d-11d9-4420-a927-a1ee813bfce8"
+          },
+          {
+            "name": "Populate Data Products",
+            "id": "efe217b7-8f46-4f44-b2ba-2d1412141da7",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/populate",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "populate"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-efe217b7-8f46-4f44-b2ba-2d1412141da7"
+          }
+        ],
+        "id": "f4d06b69-4fe0-4cef-bc0e-e3d6d285c211",
+        "uid": "38975402-f4d06b69-4fe0-4cef-bc0e-e3d6d285c211"
+      },
+      {
+        "name": "Adjustment Transactions",
+        "item": [
+          {
+            "name": "Get All Transactions",
+            "id": "c08e89bb-1094-4a9d-b000-f0f5c9e15833",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/transactions",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "transactions"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-c08e89bb-1094-4a9d-b000-f0f5c9e15833"
+          },
+          {
+            "name": "Get Transaction Detail",
+            "id": "79ea702c-d96e-4d81-af33-c43efcc479de",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/transactions/3",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "transactions",
+                  "3"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-79ea702c-d96e-4d81-af33-c43efcc479de"
+          },
+          {
+            "name": "Create Transaction",
+            "id": "034a28ef-d391-45de-8188-00c9036aa3d6",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"sku\": \"SKU123\",\n    \"qty\": 1\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/transactions",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "transactions"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-034a28ef-d391-45de-8188-00c9036aa3d6"
+          },
+          {
+            "name": "Delete Transaction",
+            "id": "c2eb33bd-8e3c-4b34-bc7d-23fb451ff0a3",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/transactions/3",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "api",
+                  "transactions",
+                  "3"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38975402-c2eb33bd-8e3c-4b34-bc7d-23fb451ff0a3"
+          }
+        ],
+        "id": "bc845052-1700-4053-81e2-2674063d98cd",
+        "uid": "38975402-bc845052-1700-4053-81e2-2674063d98cd"
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:3000"
+      }
+    ]
+  }
+}
